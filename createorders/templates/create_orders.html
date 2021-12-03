@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+    Patient Not Registered???
+    <a href="{% url 'register:register_patient' %}" type="button" class="btn btn-primary" >Registration </a>
+</div>
+
+    <form method="POST" >
+    {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit" class="btn btn-primary btn-sm"/>
+    </form>
+{% endblock content %}

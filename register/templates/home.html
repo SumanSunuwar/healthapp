@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-grid gap-2 col-2 mx-auto">
+    <a href="{% url 'register:register_patient' %}" type="button" class="btn btn-primary" >Registration </a>
+    <a href="{% url 'createorders:create_order' %}" type="button" class="btn btn-primary">Create Orders</a>
+</div>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">SN</th>
+      <th scope="col">Name</th>
+      <th scope="col">Medicine</th>
+    </tr>
+  </thead>
+    <tbody>
+
+    {% for p in orders %}
+        <tr>
+        <td scope="col">{{forloop.counter}}</td>
+        <td scope="col">{{p.patient}}</td>
+        <td scope="col">{{p.medicine}}</td>      
+    </tr> 
+    {% endfor %}
+    </tbody>
+  </tbody>
+</table>
+{% endblock content %}
