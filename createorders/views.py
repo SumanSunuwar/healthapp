@@ -4,6 +4,7 @@ from createorders.forms import OrderForm
 
 # Create your views here.
 def create_order(request):
+    '''Create an order for a patient'''
     form = OrderForm(request.POST or None)
     if form.is_valid():
         form.save() 
